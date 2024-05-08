@@ -1,3 +1,10 @@
+### Set Up Development Environment
+
+Install Required Software:
+1. Install Python (if not already installed) for backend development.
+2. Install Flask using pip: pip install flask.
+3. Install Node.js for frontend development.(version 20)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
