@@ -1,21 +1,32 @@
 import React, { useState } from 'react';
-import ReactDOM from 'react-dom';
 
-function LoginModal({ isOpen, onClose, onLogin }) {
+function LoginModal({ isOpen, onClose, onLogin, loginError }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onLogin(username, password);
-    onClose();
+    onLogin(username, password)
+      .then(() => {
+        setSuccessMessage('User logged in successfully.');
+        setUsername('');
+        setPassword('');
+        setTimeout(() => {
+          setSuccessMessage('');
+          onClose();
+        }, 2000); 
+      })
+      .catch((error) => {
+        console.error('Login error:', error);
+      });
   };
 
   if (!isOpen) {
     return null;
   }
 
-  return ReactDOM.createPortal(
+  return (
     <div style={modalStyles.overlay}>
       <div style={modalStyles.modal}>
         <h2>Login</h2>
@@ -47,9 +58,10 @@ function LoginModal({ isOpen, onClose, onLogin }) {
             Cancel
           </button>
         </form>
+        {loginError && <p style={{ color: 'red' }}>{loginError}</p>}
+        {successMessage && <p style={{ color: 'green' }}>{successMessage}</p>}
       </div>
-    </div>,
-    document.body
+    </div>
   );
 }
 
@@ -74,23 +86,7 @@ const modalStyles = {
   },
 };
 
-function App() {
-  const [isModalOpen, setModalOpen] = useState(false);
+export default LoginModal;
 
-  const handleLogin = (username, password) => {
-    console.log('Logged in with:', { username, password });
-  };
 
-  return (
-    <div>
-      <button onClick={() => setModalOpen(true)}>Login</button>
-      <LoginModal
-        isOpen={isModalOpen}
-        onClose={() => setModalOpen(false)}
-        onLogin={handleLogin}
-      />
-    </div>
-  );
-}
-
-export default App;
+ 
