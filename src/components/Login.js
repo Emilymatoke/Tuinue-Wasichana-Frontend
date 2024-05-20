@@ -87,6 +87,3 @@ const modalStyles = {
 };
 
 export default LoginModal;
-
-
- 

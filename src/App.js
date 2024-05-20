@@ -1,25 +1,54 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import CharityPage from './components/Charity';
+import Footer from './components/Footer';
+import LoginModal from './components/Login';
+import './App.css'; 
+
 
 function App() {
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  const [loginError, setLoginError] = useState('');
+
+  const handleLoginOpen = () => {
+    setIsLoginModalOpen(true);
+  };
+
+  const handleLoginClose = () => {
+    setIsLoginModalOpen(false);
+    setLoginError('');
+  };
+
+  const handleLogin = (username, password) => {
+    return new Promise((resolve, reject) => {
+      // Simulate login process
+      if (username === 'user' && password === 'password') {
+        resolve();
+      } else {
+        setLoginError('Invalid username or password');
+        reject(new Error('Invalid username or password'));
+      }
+    });
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className="app">
+      <header className="app-header">
+        <h1>Tuinue Wasichana</h1>
+        <button onClick={handleLoginOpen} className="btn btn-secondary">Login</button>
       </header>
+      <main>
+        <CharityPage />
+      </main>
+      <Footer />
+      <LoginModal 
+        isOpen={isLoginModalOpen} 
+        onClose={handleLoginClose} 
+        onLogin={handleLogin} 
+        loginError={loginError} 
+      />
     </div>
   );
 }
 
 export default App;
+

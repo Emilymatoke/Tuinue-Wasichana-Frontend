@@ -1,38 +1,197 @@
-.App {
+/* styles.css */
+
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header Section */
+.hero-section {
+  background-color: #f4f4f4;
+  padding: 50px 0;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.hero-content {
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.hero-content h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.hero-content p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+/* About Section */
+.about-section {
+  padding: 50px 0;
+}
+
+.about-section h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.about-section p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Impact Section */
+.impact-section {
+  background-color: #f9f9f9;
+  padding: 50px 0;
+}
+
+.impact-section h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.impact-cards {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: wrap;
 }
 
-.App-link {
-  color: #61dafb;
+.impact-card {
+  flex: 1;
+  padding: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.impact-card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
 }
+
+/* Donation Section */
+.donation-section {
+  padding: 50px 0;
+  text-align: center;
+}
+
+.donation-section h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.donation-section p {
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: darkcyan;
+  color: #fff;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+/* styles.css */
+
+/* Existing styles... */
+
+/* Impact Cards */
+.impact-card {
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px; /* Space between cards */
+  margin-right: 20px; /* Space between cards horizontally */
+  transition: transform 0.3s ease;
+}
+
+.impact-card:last-child {
+  margin-right: 0; /* Remove margin from the last card */
+}
+
+.impact-card:hover {
+  transform: translateY(-5px);
+}
+
+.impact-card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.impact-card p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.btn-secondary {
+  background-color: teal; /* Change to the desired background color */
+  color: white; /* Change to the desired text color */
+  padding: 10px 20px; /* Adjust padding as needed */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Add border radius for rounded corners */
+  cursor: pointer; /* Show pointer cursor on hover */
+  /* Add any additional styles for the button as needed */
+}
+
+.btn-secondary:hover {
+  background-color: darkcyan; /* Change to a darker shade when hovered */
+}
+.footer {
+  background-color: #333; /* Dark color for the footer */
+  color: #fff; /* Light text color */
+  padding: 40px 0;
+}
+
+.footer-heading {
+  color: #fff; /* Light text color */
+}
+
+.footer-text {
+  color: #ccc; /* Lighter text color */
+}
+
+.contact-info {
+  color: #ccc; /* Lighter text color */
+}
+
+.btn-primary {
+  background-color: teal; /* Primary button color */
+}
+
+.bottom-bar {
+  background-color: #1a1a1a; /* Dark background color for bottom bar */
+}
+
+.bottom-text {
+  color: #ccc; /* Lighter text color */
+}
+
+.social-icon {
+  color: #ccc; /* Lighter text color */
+}
+
+/* Additional styling for social icons if needed */
+
+
+
+
